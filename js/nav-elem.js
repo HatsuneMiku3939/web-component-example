@@ -1,10 +1,10 @@
 class NavElem extends HTMLElement {
-	constructor() {
-		super();
-	}
+  constructor() {
+    super();
+  }
 
-	connectedCallback() {
-		this.render();
+  connectedCallback() {
+    this.render();
 
     // toggle light/dark theme
     function toggleDarkMode(el){
@@ -48,28 +48,28 @@ class NavElem extends HTMLElement {
         addFontSize(-1);
       });
     });
-	}
+  }
 
-	adoptCallback() {
-	}
+  adoptCallback() {
+  }
 
-	attributeChangedCallback(attrName, oldVal, newVal) {
-		this.render();
-	}
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    this.render();
+  }
 
-	static get observedAttributes() {
-		return ['themeelement'];
-	}
+  static get observedAttributes() {
+    return ['themeelement'];
+  }
 
-	get themeelement() {
-		return this.getAttribute('themeelement');
-	}
+  get themeelement() {
+    return this.getAttribute('themeelement');
+  }
 
-	disconnectedCallback() {
-	}
+  disconnectedCallback() {
+  }
 
-	render() {
-		this.innerHTML = `
+  render() {
+    this.innerHTML = `
 <nav>
   <ul>
     <li>Brand</li>
@@ -85,7 +85,7 @@ class NavElem extends HTMLElement {
   </ul>
 </nav>
     `;
-	}
+  }
 }
 
 window.customElements.define('nav-elem', NavElem);
